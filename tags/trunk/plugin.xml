@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.editors">
+      <editor
+            name="Sample Multi-page Editor"
+            extensions="apt"
+            icon="icons/sample.gif"
+            contributorClass="yep_apt_editor.editors.MultiPageEditorContributor"
+            class="yep_apt_editor.editors.MultiPageEditor"
+            id="yep_apt_editor.editors.MultiPageEditor">
+      </editor>
+   </extension>
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <category
+            name="APT Wizards"
+            id="YEP_APT_Editor">
+      </category>
+      <wizard
+            name="APT file"
+            icon="icons/sample.gif"
+            category="YEP_APT_Editor"
+            class="yep_apt_editor.wizards.AptNewWizard"
+            id="yep_apt_editor.wizards.AptNewWizard">
+      </wizard>
+   </extension>
+
+</plugin>
