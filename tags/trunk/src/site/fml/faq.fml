@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faqs title="About the TEMPLATE_NAME application">
+ 
+
+  <part id="about"> 
+    <faq> 
+      <question> This is a very frequent question</question> 
+      <answer> 
+        <p> 
+          Thank you for asking that question, here is the answer...
+        </p> 
+      </answer> 
+    </faq>
+ 
+
+    <faq> 
+      <question> Here is another question?</question> 
+      <answer> 
+        <p> 
+          This is the answer to this question...
+        </p> 
+      </answer> 
+    </faq> 
+    
+    <faq> 
+      <question> О чём грустит Славка?</question> 
+      <answer> 
+        <p> 
+          А кто ж его знает...
+        </p> 
+      </answer> 
+    </faq>     
+  </part> 
+</faqs> 
