@@ -1,0 +1,34 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>nr.co.blky</groupId>
+	<artifactId>yepaptditor</artifactId>
+	<name>Yep APT editor plugin for Eclise</name>
+	<version>10.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+	<description>TODO</description>
+	<url>http://code.google.com/p/lpleditor/</url>
+	<scm>
+		<connection>
+			http://lpleditor.googlecode.com/svn/trunk/
+		</connection>
+		<developerConnection>
+			https://lpleditor.googlecode.com/svn/trunk/
+		</developerConnection>
+		<tag>trunk</tag>
+		<url>https://lpleditor.googlecode.com/svn/trunk/</url>
+	</scm>
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.maven.doxia</groupId>
+			<artifactId>doxia-module-apt</artifactId>
+			<version>1.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.maven.doxia</groupId>
+			<artifactId>doxia-module-xhtml</artifactId>
+			<version>1.1</version>
+		</dependency>		
+	</dependencies>
+</project>
