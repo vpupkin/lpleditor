@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.StringTokenizer;
 
+import org.apache.maven.doxia.parser.ParseException;
 import org.eclipse.core.resources.IMarker;
 import org.eclipse.core.resources.IResourceChangeEvent;
 import org.eclipse.core.resources.IResourceChangeListener;
@@ -38,7 +39,8 @@ import org.eclipse.ui.ide.IDE;
 
 import yep_apt_editor.Activator;
 
-import fr.pixware.apt.parse.ParseException;
+//
+ 
 
 public class MultiPageEditor extends MultiPageEditorPart implements
 		IResourceChangeListener, IPropertyListener {
