@@ -1,6 +1,7 @@
 package yep_apt_editor.editors;
 
 import java.io.File;
+import java.io.IOException;
 import java.io.StringWriter;
 import java.text.Collator;
 import java.util.ArrayList;
@@ -8,12 +9,16 @@ import java.util.Collections;
 import java.util.StringTokenizer;
 
 import org.apache.maven.doxia.parser.ParseException;
+import org.codehaus.plexus.PlexusContainerException;
+import org.codehaus.plexus.component.repository.exception.ComponentLookupException;
 import org.eclipse.core.resources.IMarker;
 import org.eclipse.core.resources.IResourceChangeEvent;
 import org.eclipse.core.resources.IResourceChangeListener;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.IStatus;
+import org.eclipse.core.runtime.Status;
 import org.eclipse.jface.dialogs.ErrorDialog;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.preference.IPreferenceStore;
@@ -81,6 +86,9 @@ public class MultiPageEditor extends MultiPageEditorPart implements
 				setActivePage(0);
 			} catch (ParseException _ex) {
 				setActivePage(1);
+			} catch (CoreException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
 			}
 	}
 
@@ -88,7 +96,7 @@ public class MultiPageEditor extends MultiPageEditorPart implements
 		clearProblemMarkers();
 		ResourcesPlugin.getWorkspace().removeResourceChangeListener(this);
 		super.dispose();
-	}
+	} 
 
 	public void doSave(IProgressMonitor monitor) {
 		getEditor(1).doSave(monitor);
@@ -96,6 +104,9 @@ public class MultiPageEditor extends MultiPageEditorPart implements
 			updateView();
 		} catch (ParseException _ex) {
 			setActivePage(1);
+		} catch (CoreException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 	}
 
@@ -197,7 +208,7 @@ public class MultiPageEditor extends MultiPageEditorPart implements
 			});
 	}
 
-	public void updateView() throws ParseException {
+	public void updateView() throws ParseException, CoreException {
 		aptEditorDriver.setTOC(preferenceStore.getBoolean("tableOfContent"));
 		aptEditorDriver.setSectionsNumbered(preferenceStore
 				.getBoolean("sectionNumbering"));
@@ -219,8 +230,8 @@ public class MultiPageEditor extends MultiPageEditorPart implements
 		try {
 			String htmlFilePath = aptEditorDriver.convert(aptFilePath);
 			browser.setUrl(new File( htmlFilePath).getAbsolutePath() );
-		} catch (Exception e) {
-			if (e instanceof ParseException) {
+		} catch (ParseException e) {
+			  {
 				ParseException pe = (ParseException) e;
 				try {
 					IMarker marker = getAPTFile().createMarker(
@@ -236,10 +247,43 @@ public class MultiPageEditor extends MultiPageEditorPart implements
 				}
 				throw pe;
 			}
+			
+		}catch (IllegalArgumentException e) {
+ 			 e.printStackTrace();
+ 			 String msg = e.getMessage();
+ 			msg+=" Try to build project-site to fix it first.";
+			IStatus status = new Status(Status.INFO, Activator.getDefault().toString(), Status.OK, msg , e);
+			Activator.getDefault().getLog().log(status );
+		} catch (PlexusContainerException e) {
+			 String msg = e.getMessage();
+				IStatus status = new Status(Status.INFO, Activator.getDefault().toString(), Status.OK, msg , e);
+				Activator.getDefault().getLog().log(status );
+			e.printStackTrace();
+		} catch (ComponentLookupException e) {
+			 String msg = e.getMessage();
+				IStatus status = new Status(Status.INFO, Activator.getDefault().toString(), Status.OK, msg , e);
+				Activator.getDefault().getLog().log(status );
+			e.printStackTrace();
+		} catch (IOException e) {
+			 String msg = e.getMessage();
+				IStatus status = new Status(Status.INFO, Activator.getDefault().toString(), Status.OK, msg , e);
+				Activator.getDefault().getLog().log(status );
 			e.printStackTrace();
 		}
 	}
 
+	
+    /**
+
+     * Set error status line of RCP with this message.
+
+     * @param message String to be placed on status line, set to 
+
+     * null to clear status message.  
+
+     */
+
+	
 	private String getEditorText() {
 		return editor.getDocumentProvider()
 				.getDocument(editor.getEditorInput()).get();

@@ -49,20 +49,26 @@ public class APTEditorDriver
             file.mkdirs();
     }
 
-    public String convert(String aptFilePath)
-        throws Exception
+    public String convert(String aptFilePath) throws PlexusContainerException, ComponentLookupException, IOException, ParseException
+         
     {  String htmlFileName = aptFilePath;
  		String htmlFilePath  = aptFilePath;
-	 
-        htmlFileName = (new StringBuilder(String.valueOf(aptFilePath.substring(aptFilePath.lastIndexOf(pathSeparator) + 1, aptFilePath.lastIndexOf("."))))).append(".html").toString();
-        htmlFilePath = (new StringBuilder(String.valueOf(tempDirectory))).append(htmlFileName).toString();
+ 		htmlFilePath = new File(cdDotDot(cdDotDot(cdDotDot(cdDotDot(htmlFilePath))))+"/target/site/").  getAbsolutePath();
+	    String resourceNameTmp = aptFilePath.substring(aptFilePath.lastIndexOf(pathSeparator) + 1);
+        int endIndex = resourceNameTmp.indexOf(".");
+		htmlFileName = (new File(htmlFilePath,resourceNameTmp.substring(0, endIndex ) + ".html")).getAbsolutePath();
+        //htmlFilePath = (new StringBuilder(String.valueOf(tempDirectory))).append(htmlFileName).toString();
         convert(new String[] {
             aptFilePath
-        }, htmlFilePath);
+        }, htmlFileName);
     	
-         return htmlFilePath;
+         return htmlFileName;
  
     }
+
+	private String cdDotDot(String htmlFilePath) {
+		return (new File(htmlFilePath)).getParent();
+	}
 
     private void convert(String[] strings, String htmlFilePath) throws PlexusContainerException, ComponentLookupException, IOException, ParseException {
     	  File userDir = new File( System.getProperty ( "user.dir" ) );
@@ -98,16 +104,16 @@ public class APTEditorDriver
 	private String tempDirectory;
     private String pathSeparator;
 	public void setTOC(boolean boolean1) {
-		log.fine("setTOC("+boolean1+") called.");
+		System.out.println("setTOC("+boolean1+") called.");
 	}
 
 	public void setSectionsNumbered(boolean boolean1) {
-		log.fine("setSectionsNumbered("+boolean1+") called.");	}
+		System.out.println("setSectionsNumbered("+boolean1+") called.");	}
 
 	public void putPI(String string, String string2, String cssPath) {
-		log.fine("setSectionsNumbered("+string+","+string2+","+cssPath+") called.");	}
+		System.out.println("putPI("+string+","+string2+","+cssPath+") called.");	}
 
 	public void setEncoding(String charset) {
-		log.fine("setEncoding("+charset+") called.");	 
+		System.out.println("setEncoding("+charset+") called.");	 
 	}
 }

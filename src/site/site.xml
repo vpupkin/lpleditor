@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="lpleditor">
+  <bannerLeft>
+    <name>lpleditor.googlecode.com</name>
+    <src>images/logo.jpeg</src>
+    <href>http://lpleditor.googlecode.com//</href>
+  </bannerLeft>
+  <bannerRight>
+    <name>lpleditor.googlecode.com/</name>
+    <src>images/logo.gif</src>
+    <href>http://lpleditor.googlecode.com/</href>
+  </bannerRight>
+  <publishDate format="dd MMM yyyy"/>
+ 
+  <body>
+    <links>
+      <item name="Apache" href="http://www.apache.org/"/>
+      <item name="Doxia" href="http://maven.apache.org/doxia/references/apt-format.html"/>
+    </links>
+
+     <menu name="Documentation"> 
+      <item name="Intro" href="intro.html"></item>
+      <item name="Overwiew" href="overview.html"></item>
+      <item name="User Guide" href="ug.html"/>
+      <item name="Developer Guide" href="dg.html"/>
+       <item name="Release Checklist" href="http://code.google.com/p/lpleditor/issues/list"/>
+       <item name="FAQ" href="faq.html"/>
+    </menu>
+
+    ${parentProject}
+    ${modules}
+    ${reports}
+
+
+    <menu name="Foundation">
+      <item name="OXSEED" href="http://oxseed.com/"/>
+    </menu>
+
+  </body>
+</project>
+
