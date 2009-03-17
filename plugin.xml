@@ -7,7 +7,7 @@
       <editor
             name="Sample Multi-page Editor"
             extensions="apt"
-            icon="icons/sample.gif"
+            icon="icons/icon_apt_transparent.gif"
             contributorClass="yep_apt_editor.editors.MultiPageEditorContributor"
             class="yep_apt_editor.editors.MultiPageEditor"
             id="yep_apt_editor.editors.MultiPageEditor">
@@ -21,7 +21,7 @@
       </category>
       <wizard
             name="APT file"
-            icon="icons/sample.gif"
+            icon="icons/icon_apt_transparent.gif"
             category="YEP_APT_Editor"
             class="yep_apt_editor.wizards.AptNewWizard"
             id="yep_apt_editor.wizards.AptNewWizard">
