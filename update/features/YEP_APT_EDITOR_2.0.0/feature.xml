@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="YEP_APT_EDITOR"
+      label="YEP_APT_EDITOR Feature"
+      version="2.0.0"
+      provider-name="V.I.P."
+      plugin="YEP_APT_Editor"
+      os="linux,win32"
+      nl="de,en"
+      arch="x86">
+
+   <description url="http://code.google.com/p/lpleditor/">
+      Initial goal to writing this plugin - fix the problem with original APT which not works on my version of Eclipse.
+
+So -after short searching for alternative or at least sourcecode for plugin above the WIKI gave me a lot of ideas ... ...and the project is here... ...with unique name.... ...yep.
+YEP APT - AlmostPlainText Editor
+is an Eclipse plugin
+that can be used to edit and preview APT (Almost Plain Text) files.
+   </description>
+
+   <copyright url="http://www.example.com/copyright">
+      [Enter Copyright Description here.]
+   </copyright>
+
+   <license url="http://www.example.com/license">
+      [Enter License Description here.]
+   </license>
+
+   <plugin
+         id="YEP_APT_Editor"
+         download-size="0"
+         install-size="0"
+         version="2.0.0"
+         unpack="false"/>
+
+</feature>
