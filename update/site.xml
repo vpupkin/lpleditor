@@ -4,7 +4,11 @@
       10x to Google!
    </description>
    <feature url="features/YEP_APT_EDITOR_2.0.0.jar" id="YEP_APT_EDITOR" version="2.0.0" os="linux,win32" nl="de,en" arch="x86">
-      <category name="new_category_1"/>
+      <category name="2.0.0"/>
    </feature>
-   <category-def name="new_category_1" label="New Category 1"/>
+   <category-def name="2.0.0" label="YEP APT ditor 2.0.0">
+      <description>
+         1st
+      </description>
+   </category-def>
 </site>
