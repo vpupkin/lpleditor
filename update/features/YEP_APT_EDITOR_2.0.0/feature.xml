@@ -5,9 +5,11 @@
       version="2.0.0"
       provider-name="V.I.P."
       plugin="YEP_APT_Editor"
-      os="linux,win32"
-      nl="de,en"
-      arch="x86">
+      os="aix,hpux,linux,macosx,qnx,solaris,win32"
+      ws="carbon,gtk,motif,photon,win32,wpf"
+      nl="ar,ar_AE,ar_BH,ar_DZ,ar_EG,ar_IQ,ar_JO,ar_KW,ar_LB,ar_LY,ar_MA,ar_OM,ar_QA,ar_SA,ar_SD,ar_SY,ar_TN,ar_YE,be,be_BY,bg,bg_BG,ca,ca_ES,cs,cs_CZ,da,da_DK,de,de_AT,de_CH,de_DE,de_LU,el,el_GR,en,en_AU,en_CA,en_GB,en_IE,en_IN,en_NZ,en_US,en_ZA,es,es_AR,es_BO,es_CL,es_CO,es_CR,es_DO,es_EC,es_ES,es_GT,es_HN,es_MX,es_NI,es_PA,es_PE,es_PR,es_PY,es_SV,es_UY,es_VE,et,et_EE,fi,fi_FI,fr,fr_BE,fr_CA,fr_CH,fr_FR,fr_LU,hi_IN,hr,hr_HR,hu,hu_HU,is,is_IS,it,it_CH,it_IT,iw,iw_IL,ja,ja_JP,ko,ko_KR,lt,lt_LT,lv,lv_LV,mk,mk_MK,nl,nl_BE,nl_NL,no,no_NO,no_NO_NY,pl,pl_PL,pt,pt_BR,pt_PT,ro,ro_RO,ru,ru_RU,sk,sk_SK,sl,sl_SI,sq,sq_AL,sr,sr_BA,sr_CS,sv,sv_SE,th,th_TH,th_TH_TH,tr,tr_TR,uk,uk_UA,vi,vi_VN,zh,zh_CN,zh_HK,zh_TW"
+      arch="ia64,ia64_32,PA_RISC,ppc,sparc,x86,x86_64"
+      colocation-affinity="YEP APT">
 
    <description url="http://code.google.com/p/lpleditor/">
       Initial goal to writing this plugin - fix the problem with original APT which not works on my version of Eclipse.
@@ -28,6 +30,7 @@ that can be used to edit and preview APT (Almost Plain Text) files.
 
    <url>
       <update label="http://lpleditor.googlecode.com/svn/update/" url="http://lpleditor.googlecode.com/svn/update/"/>
+      <discovery label="New discovery site" url="http://newsite"/>
    </url>
 
    <requires>
@@ -41,14 +44,13 @@ that can be used to edit and preview APT (Almost Plain Text) files.
 
    <plugin
          id="YEP_APT_Editor"
-         os="linux"
-         ws="win32"
-         nl="en"
-         arch="x86,x86_64"
+         os="aix,hpux,linux,macosx,qnx,solaris,win32"
+         ws="carbon,gtk,motif,photon,win32,wpf"
+         nl="ar,ar_AE,ar_BH,ar_DZ,ar_EG,ar_IQ,ar_JO,ar_KW,ar_LB,ar_LY,ar_MA,ar_OM,ar_QA,ar_SA,ar_SD,ar_SY,ar_TN,ar_YE,be,be_BY,bg,bg_BG,ca,ca_ES,cs,cs_CZ,da,da_DK,de,de_AT,de_CH,de_DE,de_LU,el,el_GR,en,en_AU,en_CA,en_GB,en_IE,en_IN,en_NZ,en_US,en_ZA,es,es_AR,es_BO,es_CL,es_CO,es_CR,es_DO,es_EC,es_ES,es_GT,es_HN,es_MX,es_NI,es_PA,es_PE,es_PR,es_PY,es_SV,es_UY,es_VE,et,et_EE,fi,fi_FI,fr,fr_BE,fr_CA,fr_CH,fr_FR,fr_LU,hi_IN,hr,hr_HR,hu,hu_HU,is,is_IS,it,it_CH,it_IT,iw,iw_IL,ja,ja_JP,ko,ko_KR,lt,lt_LT,lv,lv_LV,mk,mk_MK,nl,nl_BE,nl_NL,no,no_NO,no_NO_NY,pl,pl_PL,pt,pt_BR,pt_PT,ro,ro_RO,ru,ru_RU,sk,sk_SK,sl,sl_SI,sq,sq_AL,sr,sr_BA,sr_CS,sv,sv_SE,th,th_TH,th_TH_TH,tr,tr_TR,uk,uk_UA,vi,vi_VN,zh,zh_CN,zh_HK,zh_TW"
+         arch="ia64,ia64_32,PA_RISC,ppc,sparc,x86,x86_64"
          download-size="0"
          install-size="0"
-         version="2.0.0"
-         unpack="false"/>
+         version="2.0.0"/>
 
    <data
          id=".project"
@@ -57,6 +59,10 @@ that can be used to edit and preview APT (Almost Plain Text) files.
 
    <data
          id="build.properties"
+         os="aix,hpux,linux,macosx,qnx,solaris,win32"
+         ws="carbon,gtk,motif,photon,win32,wpf"
+         nl="ar,ar_AE,ar_BH,ar_DZ,ar_EG,ar_IQ,ar_JO,ar_KW,ar_LB,ar_LY,ar_MA,ar_OM,ar_QA,ar_SA,ar_SD,ar_SY,ar_TN,ar_YE,be,be_BY,bg,bg_BG,ca,ca_ES,cs,cs_CZ,da,da_DK,de,de_AT,de_CH,de_DE,de_LU,el,el_GR,en,en_AU,en_CA,en_GB,en_IE,en_IN,en_NZ,en_US,en_ZA,es,es_AR,es_BO,es_CL,es_CO,es_CR,es_DO,es_EC,es_ES,es_GT,es_HN,es_MX,es_NI,es_PA,es_PE,es_PR,es_PY,es_SV,es_UY,es_VE,et,et_EE,fi,fi_FI,fr,fr_BE,fr_CA,fr_CH,fr_FR,fr_LU,hi_IN,hr,hr_HR,hu,hu_HU,is,is_IS,it,it_CH,it_IT,iw,iw_IL,ja,ja_JP,ko,ko_KR,lt,lt_LT,lv,lv_LV,mk,mk_MK,nl,nl_BE,nl_NL,no,no_NO,no_NO_NY,pl,pl_PL,pt,pt_BR,pt_PT,ro,ro_RO,ru,ru_RU,sk,sk_SK,sl,sl_SI,sq,sq_AL,sr,sr_BA,sr_CS,sv,sv_SE,th,th_TH,th_TH_TH,tr,tr_TR,uk,uk_UA,vi,vi_VN,zh,zh_CN,zh_HK,zh_TW"
+         arch="ia64,ia64_32,PA_RISC,ppc,sparc,x86,x86_64"
          download-size="0"
          install-size="0"/>
 
